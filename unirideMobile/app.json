@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "unirideMobile",
+    "slug": "unirideMobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
