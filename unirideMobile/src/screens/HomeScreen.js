@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import logo from '../assets/img/logo.png'
 import Login from '../screens/Login'
 
 const HomeScreen = () => {
@@ -8,7 +9,12 @@ const HomeScreen = () => {
   console.log(showLogin);
 
   return (
-    <div>
+    <div
+      style={{
+        height: '100%',
+        background: '#eef1f4'
+      }}
+    >
       {
         showLogin ?
         <Login/>
@@ -19,11 +25,7 @@ const HomeScreen = () => {
             width: '100%',
             display: 'grid',
             gridTemplateColumns: '1fr',
-            gridTemplateRows: '8% 70% 22%',
-            backgroundImage: 'url(../assets/img/logo.png)', // FIXME: Rever aqui porque o background n funciona
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'contain',
-            backgroundPosition: 'center'
+            gridTemplateRows: '8% 6% 64% 22%',
           }}
         >
           <div id='btn-login'
@@ -46,24 +48,33 @@ const HomeScreen = () => {
               Entrar
             </a>
           </div>
-  
-          <div id='title-uniride'
-            style={{
-              alignSelf: 'center',
-              justifySelf: 'center',
-            }}
-          >
+
+          <div>
             <span
               style={{
                 color: '#AF1B3F',
                 fontWeight: '900',
                 fontSize: '25pt',
-                textShadow: 'rgb(0 0 0 / 39%) 0.1em 0.1em 0.2em'
+                textShadow: 'rgb(0 0 0 / 39%) 0.1em 0.1em 0.2em',
+                marginLeft: '3%'
               }}
             >
               UNIRIDE
             </span>
           </div>
+  
+          <div id='title-uniride'
+            style={{
+              alignSelf: 'center',
+              justifySelf: 'center',
+              backgroundImage: `url(${logo})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'right',
+              backgroundSize: '90%',
+              height: '100%',
+              width: '100%',
+            }}
+          />
   
           <div id='inicial-btn'
             style={{
