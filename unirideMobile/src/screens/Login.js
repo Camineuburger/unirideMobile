@@ -1,7 +1,7 @@
 import React from "react";
 import balls from '../assets/img/balls.png'
-import { Button } from 'react-bootstrap';
 import logo from '../assets/img/logo.png'
+import { Button } from 'react-bootstrap';
 
 const Login = () => {
 
@@ -44,7 +44,7 @@ const Login = () => {
                     backgroundImage: `url(${logo})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
-                    backgroundSize: '26%',
+                    backgroundSize: '19%',
                     height: '100%',
                     width: '100%',
                 }}
