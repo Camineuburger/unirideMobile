@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import logo from '../assets/img/logo.png'
-import Login from '../screens/Login'
+import logo from '../assets/img/logo.png';
+import Login from '../screens/Login';
+import RegisterUser from './RegisterUser';
 
 const HomeScreen = () => {
 
-  const [showLogin, setShowLogin] = useState(false);
-  console.log(showLogin);
+  const [showPage, setShowPage] = useState('home_sreen');
 
   return (
     <div
@@ -16,9 +16,7 @@ const HomeScreen = () => {
       }}
     >
       {
-        showLogin ?
-        <Login/>
-        :
+        showPage == "home_sreen" &&
         <div
           style={{
             height: '100vh',
@@ -28,7 +26,7 @@ const HomeScreen = () => {
             gridTemplateRows: '8% 6% 64% 22%',
           }}
         >
-          <div id='btn-login'
+          <div
             style={{
               justifySelf: 'end',
               marginRight: '15px',
@@ -36,7 +34,7 @@ const HomeScreen = () => {
             }}
           >
             <a
-              onClick={() => setShowLogin(true)}
+              onClick={() => setShowPage("login")}
               style={{
                 textDecoration: 'unset',
                 color: '#AF1B3F',
@@ -63,7 +61,7 @@ const HomeScreen = () => {
             </span>
           </div>
   
-          <div id='title-uniride'
+          <div
             style={{
               alignSelf: 'center',
               justifySelf: 'center',
@@ -76,13 +74,14 @@ const HomeScreen = () => {
             }}
           />
   
-          <div id='inicial-btn'
+          <div
             style={{
               alignSelf: 'center',
               justifySelf: 'center',
             }}
           >
             <Button
+              onClick={() => setShowPage("register_user")}
               style={{
                 backgroundColor: '#AF1B3F',
                 borderRadius: '30px',
@@ -97,6 +96,16 @@ const HomeScreen = () => {
             </Button>
           </div>
         </div>
+      }
+
+      {
+        showPage == "login" &&
+        <Login />
+      }
+
+      {
+        showPage == "register_user" &&
+        <RegisterUser />
       }
     </div>
   );
